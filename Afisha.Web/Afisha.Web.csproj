@@ -140,6 +140,16 @@
   <ItemGroup>
     <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Afisha.Data\Afisha.Data.csproj">
+      <Project>{527abbb6-c976-4842-a893-e7c83dbbe444}</Project>
+      <Name>Afisha.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Afisha.Models\Afisha.Models.csproj">
+      <Project>{3c1497ce-8829-4a13-8359-45e779913743}</Project>
+      <Name>Afisha.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
