@@ -13,5 +13,4 @@ namespace Afisha.Models
         public Movie Movie { get; set; }
         public Theater Theater { get; set; }
     }
-    }
 }
