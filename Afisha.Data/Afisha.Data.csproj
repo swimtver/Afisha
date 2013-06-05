@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IMovieRepository.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="MovieRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

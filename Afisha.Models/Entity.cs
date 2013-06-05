@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Afisha.Models
 {
-    public class Movie:Entity
+    public class Entity
     {
-        public string Title { get; set; }
+        public int Id { get; set; }
     }
 }
