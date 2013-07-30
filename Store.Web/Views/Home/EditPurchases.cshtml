@@ -1,0 +1,79 @@
+﻿@model IList<Store.Domain.Model.Purchase>
+@{
+    ViewBag.Title = "Покупки";
+}
+<h2>
+    Покупки аккаунта:</h2>
+@using (Html.BeginForm(new { id = ViewBag.Id }))
+{
+    
+    <table id="purchase-edit">
+        <thead>
+            <tr>
+                <th>
+                    Наименование
+                </th>
+                <th>
+                    Количество
+                </th>
+                <th>
+                    Цена
+                </th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr data-id="@item.Id">
+                    <td>
+                        @Html.TextBox("[" + @item.Id + "].Name", item.Name)
+                    </td>
+                    <td>
+                        @Html.TextBox("[" + @item.Id + "].Count", item.Count)
+                    </td>
+                    <td>
+                        @Html.TextBox("[" + @item.Id + "].Price", item.Price)
+                    </td>
+                    <td>
+                        <a class="removelink">Удалить</a>
+                        @Html.Hidden("[" + @item.Id + "].Id", item.Id)
+                        <input type="hidden" name="Index" value="@item.Id" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        <a class="addlink">Добавить покупку</a>
+    </p>    
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+}
+<div>
+    @Html.ActionLink("Назад", "Index", new { id = ViewBag.Id })
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $("#purchase-edit").on("click", ".removelink", function (event) {
+                $(this).parent().parent().remove();
+            });
+            $(".addlink").on("click", function (event) {
+                var lastrow = $("#purchase-edit tr:last");
+                var index = parseInt(lastrow.attr("data-id")) + 1;
+                var template = "<tr data-id='" + index + "'>" +
+                                "<td><input name='[" + index + "].Name' type='text'></td>" +
+                                "<td><input name='[" + index + "].Count' type='text'></td>" +
+                                "<td><input name='[" + index + "].Price' type='text'></td>" +
+                                "<td>" +
+                                    "<a class='removelink'>Удалить</a>" +
+                                    "<input type='hidden' name='Index' value='" + index + "'>" +
+                                "</td></tr>";
+                $("#purchase-edit tbody").append(template);
+            });
+        });
+    </script>
+}

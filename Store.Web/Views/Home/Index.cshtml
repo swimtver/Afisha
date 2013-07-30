@@ -1,0 +1,12 @@
+﻿@model Store.Domain.Model.Account
+@{
+    ViewBag.Title = "Index";
+}
+<div id="purchaselist">
+    @Html.Action("Purchases", Model != null ? new { id = Model.Id } : null)
+</div>
+@section accountList{
+    <div class="account-data">
+        @Html.Action("AccountList", "Home", Model != null ? new { id = Model.Id } : null)
+    </div>
+}

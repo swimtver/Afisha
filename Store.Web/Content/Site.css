@@ -1,0 +1,236 @@
+﻿html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #efeeef;
+    border-top: solid 10px #000;
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #333;
+    outline: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: underline;
+}
+
+    a:link, a:visited,
+    a:active, a:hover {
+        color: #333;
+        cursor:pointer;
+    }
+
+    a:hover {
+        background-color: #c7d1d6;
+    }
+
+header, footer, hgroup,
+nav, section {
+    display: block;
+}
+
+mark {
+    background-color: #a6dbed;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    color: #000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+/* main layout
+----------------------------------------------------------*/
+header {
+    background-color: #fff;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+#main {
+    clear: both;
+    padding-bottom: 35px;
+}
+
+.main-content {
+    padding-left: 10px;
+    padding-top: 30px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e2e2e2;
+    font-size: .8em;
+}
+
+    footer > p {
+        display: inline;
+    }
+
+/* */
+.site-title {
+    color: #c8c8c8;
+    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+    font-size: 2.3em;
+    margin: 20px 0;
+}
+
+    .site-title a, .site-title a:hover, .site-title a:active {
+        background: none;
+        color: #c8c8c8;
+        outline: none;
+        text-decoration: none;
+    }
+
+.account-data {
+    margin: 20px 0;
+}
+.empty-result {
+    color: #DDD;
+    font-size: 56px;
+    text-shadow: 1px 1px 3px #FFF;
+}
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+input[type=text], select {
+    border: 1px solid #e2e2e2;
+    color: #333;
+    font-size: 1em;
+    margin: 5px 0 6px 0;
+    padding: 5px;
+    width: 100px;
+}
+select {
+width: 300px;
+}
+    input[type=text]:focus, select:focus {
+        border: 1px solid #7ac0da;
+    }
+
+    select option {
+        color: #333;
+        font-size: 1em;
+        font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    }
+
+input[type=submit] {
+    background-color: #d3dce0;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 7px;
+}
+/**/
+#purchase-view{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 12px;
+width: 480px;
+text-align: left;
+border-collapse: collapse;
+margin: 20px;
+	
+}
+#purchase-view th{
+	font-size: 14px;
+font-weight: normal;
+color: #039;
+padding: 12px 15px;
+}
+
+#purchase-view td{
+	color: #669;
+border-top: 1px solid #E8EDFF;
+padding: 10px 15px;
+}
+#purchase-view tr:hover td{
+color:#339;background:#eff2ff;
+}
+
+#purchase-edit{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 12px;
+border-collapse: collapse;
+text-align: left;
+margin: 20px;
+}
+#purchase-edit th{
+	font-size: 14px;
+font-weight: normal;
+color: #039;
+border-bottom: 2px solid #6678B1;
+padding: 10px 8px;
+}
+#purchase-edit td{
+	color: #669;
+padding: 9px 8px 0;
+}
+
+@media only screen and (max-width: 850px) {
+
+    /* header
+    ----------------------------------------------------------*/
+    header .float-left,
+    header .float-right {
+        float: none;
+    }
+
+    /* logo */
+    header .site-title,
+    header .account-data {
+        margin: 10px;
+        text-align: center;
+    }
+}

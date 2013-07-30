@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Store.Domain.Model.Account>
+@{
+    var options = new AjaxOptions
+    {
+        UpdateTargetId = "purchaselist",
+        Url = Url.Action("Purchases")
+    };
+}
+@using (Ajax.BeginForm(options))
+{
+    <span>Выберите аккаунт: </span>@Html.DropDownList("id", new SelectList(Model, "Id", "Name"), "")
+    <input type="submit" value="Выбрать" />
+}

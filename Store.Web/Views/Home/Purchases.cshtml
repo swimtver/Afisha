@@ -1,0 +1,55 @@
+﻿@model Store.Domain.Model.Account
+@{
+    Layout = null;
+}
+@if (Model == null)
+{
+    <p class="empty-result">
+        Выберите аккаунт</p>
+}
+else
+{
+    <p>
+        Список покупок для @Model.Name:</p>
+    
+    if (@Model.Purchases.Any())
+    {   
+    @Html.ActionLink("Изменить покупки", "EditPurchases", new { id = Model.Id })
+    <table id="purchase-view">
+        <thead>
+            <tr>
+                <th>
+                    Наименование
+                </th>
+                <th>
+                    Количество
+                </th>
+                <th>
+                    Цена
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Purchases)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Count
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>    
+    @:Всего покупок - @Model.Purchases.Count
+    }
+    else
+    {
+    @Html.ActionLink("Добавить покупки", "EditPurchases", new { id = Model.Id })
+    }
+}
